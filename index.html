@@ -1,0 +1,805 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/png" href="seal_icon.png">
+  <title>Vitchyr H. Pong</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140810263-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140810262-1');
+  </script>
+  </head>
+  <body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+    <td>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="62%" valign="middle">
+        <p align="center">
+          <name>Vitchyr H. Pong</name>
+        </p>
+        <p>I am a PhD candidate at UC Berkeley advised by <a
+            href="https://people.eecs.berkeley.edu/~svlevine/">Sergey
+            Levine</a>.  I am interested in using deep reinforcement learning for
+        robotics.  I did my undergrad at Cornell University, where I worked with
+        <a href="http://www.cs.cornell.edu/~rak/">Ross Knepper</a> and <a
+        href="http://verifiablerobotics.com/">Hadas Kress-Gazit</a>.
+        </p>
+        <p align=center>
+            <!-- <a href="VitchyrPong-CV.pdf">CV</a> &nbsp/&nbsp TODO -->
+            <a href="cv.pdf"> CV </a> (March 2019) &nbsp/&nbsp
+            <a href="http://www.linkedin.com/in/vitchyr-pong/"> LinkedIn </a> &nbsp/&nbsp
+            <a href="https://github.com/vitchyr"> GitHub </a>
+            <br />
+            vitchyr at berkeley dot edu
+        </p>
+        </td>
+        <td width="38%">
+            <div class="image-cropper">
+                <img src="vitchyrpong_headshot.jpg" width="103%">
+            </div>
+        </td>
+      </tr>
+      </table>
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Preprints</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+          <td width="25%"><img src="smac.gif" alt="SMAC visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/2107.03974.pdf">
+            <papertitle>
+                Offline Meta-Reinforcement Learning with Online Self-Supervision
+            </papertitle>
+            </a>
+            <br>
+            <strong>Vitchyr H. Pong*</strong>,
+            <a href="https://ashvin.me/">Ashvin Nair*</a>,
+            <a href="https://lauramsmith.github.io/">
+                Laura Smith
+            </a>,
+            <a href="https://thecatherinehuang.github.io/">
+                Catherine Huang
+            </a>,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine
+            </a>.
+            <em>
+                arXiv preprint
+            </em>
+            [<a href="https://arxiv.org/abs/2107.03974">arXiv</a>]
+            [<a href="https://sites.google.com/view/smac-rl/">website</a>]
+          </p>
+          <p>
+          Meta-reinforcement learning (RL) can meta-train policies that adapt to
+          new tasks with orders of magnitude less data than standard RL, but
+          meta-training itself is costly and time-consuming. If we can
+          meta-train on offline data, then we can reuse the same static dataset,
+          labeled once with rewards for different tasks, to meta-train policies
+          that adapt to a variety of new tasks at meta-test time. Although this
+          capability would make meta-RL a practical tool for real-world use,
+          offline meta-RL presents additional challenges beyond online meta-RL
+          or standard offline RL settings. Meta-RL learns an exploration
+          strategy that collects data for adapting, and also meta-trains a
+          policy that quickly adapts to data from a new task. Since this policy
+          was meta-trained on a fixed, offline dataset, it might behave
+          unpredictably when adapting to data collected by the learned
+          exploration strategy, which differs systematically from the offline
+          data and thus induces distributional shift. We do not want to remove
+          this distributional shift by simply adopting a conservative
+          exploration strategy, because learning an exploration strategy enables
+          an agent to collect better data for faster adaptation. Instead, we
+          propose a hybrid offline meta-RL algorithm, which uses offline data
+          with rewards to meta-train an adaptive policy, and then collects
+          additional unsupervised online data, without any reward labels to
+          bridge this distribution shift. By not requiring reward labels for
+          online collection, this data can be much cheaper to collect. We
+          compare our method to prior work on offline meta-RL on simulated robot
+          locomotion and manipulation tasks and find that using additional
+          unsupervised online data collection leads to a dramatic improvement in
+          the adaptive capabilities of the meta-trained policies, matching the
+          performance of fully online meta-RL on a range of challenging domains
+          that require generalization to new tasks.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="odac.png" alt="ODAC visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/2104.10190.pdf">
+            <papertitle>
+                Outcome-Driven Reinforcement Learning via Variational Inference
+            </papertitle>
+            </a>
+            <br>
+            <a href="http://timrudner.com/">
+                Tim G. J. Rudner*
+            </a>,
+            <strong>Vitchyr H. Pong*</strong>,
+            <a href="https://rowanmcallister.github.io/">
+                Rowan McAllister
+            </a>,
+            <a href="http://www.cs.ox.ac.uk/people/yarin.gal/website/">
+                Yarin Gal
+            </a>,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine
+            </a>.
+            <em>
+                arXiv preprint
+            </em>
+            [<a href="https://arxiv.org/pdf/2104.10190.pdf">arXiv</a>]
+          </p>
+          <p>
+          While reinforcement learning algorithms provide
+          automated acquisition of optimal policies, practical application of
+          such methods requires a number
+          of design decisions, such as manually designing
+          reward functions that not only define the task, but
+          also provide sufficient shaping to accomplish it.
+          In this paper, we discuss a new perspective on
+          reinforcement learning, recasting it as the problem of inferring
+          actions that achieve desired outcomes, rather than a problem of
+          maximizing rewards. To solve the resulting outcome-directed inference
+          problem, we establish a novel variational
+          inference formulation that allows us to derive a
+          well-shaped reward function which can be learned
+          directly from environment interactions. From the
+          corresponding variational objective, we also derive a new
+          probabilistic Bellman backup operator reminiscent of the standard
+          Bellman backup
+          operator and use it to develop an off-policy algorithm to solve
+          goal-directed tasks. We empirically
+          demonstrate that this method eliminates the need
+          to design reward functions and leads to effective
+          goal-directed behaviors.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="replab.png" alt="REPLAB visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/1905.07447.pdf">
+            <papertitle>
+                REPLAB: A Reproducible Low-Cost Arm Benchmark Platform for Robotic Learning
+            </papertitle>
+            </a>
+            <br>
+            Brian Yang,
+            Jesse Zhang,
+            <strong>Vitchyr H. Pong</strong>,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine
+            </a>,
+            <a href="https://people.eecs.berkeley.edu/~dineshjayaraman/">
+                Dinesh Jayaraman</a>.
+            <em>
+                arXiv preprint
+            </em>
+            [<a href="https://arxiv.org/abs/1905.07447">arXiv</a>]
+            [<a href="https://sites.google.com/view/replab/">website</a>]
+          </p>
+          <p>
+          Standardized evaluation measures have aided in the progress of
+          machine learning approaches in disciplines such as computer vision and
+          machine translation. In this paper, we make the case that robotic
+          learning would also benefit from benchmarking, and present the
+          "REPLAB" platform for benchmarking vision-based manipulation tasks.
+          REPLAB is a reproducible and self-contained hardware stack (robot arm,
+          camera, and workspace) that costs about 2000 USD, occupies a cuboid of
+          size 70x40x60 cm, and permits full assembly within a few hours.
+          Through this low-cost, compact design, REPLAB aims to drive wide
+          participation by lowering the barrier to entry into robotics and to
+          enable easy scaling to many robots. We envision REPLAB as a framework
+          for reproducible research across manipulation tasks, and as a step in
+          this direction, we define a template for a grasping benchmark
+          consisting of a task definition, evaluation protocol, performance
+          measures, and a dataset of 92k grasp attempts. We implement, evaluate,
+          and analyze several previously proposed grasping approaches to
+          establish baselines for this benchmark. Finally, we also implement and
+          evaluate a deep reinforcement learning approach for 3D reaching tasks
+          on our REPLAB platform.
+          </p>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Publications</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+          <td width="25%"><img src="disco.png" alt="DisCo visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/2104.11707.pdf">
+            <papertitle>
+                DisCo RL: Distribution-Conditioned Reinforcement Learning for General-Purpose Policies
+            </papertitle>
+            </a>
+            <br>
+            <a href="http://snasiriany.me/">Soroush Nasiriany*</a>,
+            <strong>Vitchyr H. Pong*</strong>,
+            <a href="https://ashvin.me/">Ashvin Nair*</a>,
+            Alexander Khazatsky,
+            <a href="https://people.eecs.berkeley.edu/~gberseth/">Glen Berseth</a>,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>.
+            <em>
+                  International Conference on Robotics and Automation (ICRA), 2021.
+            </em>
+            [<a href="https://arxiv.org/abs/2104.11707">arXiv</a>]
+            [<a href="https://sites.google.com/view/disco-rl">videos</a>]
+          </p>
+          <p>
+          Can we use reinforcement learning to learn general-purpose policies
+          that can perform a wide range of different tasks, resulting in
+          flexible and reusable skills? Contextual policies provide this
+          capability in principle, but the representation of the context
+          determines the degree of generalization and expressivity. Categorical
+          contexts preclude generalization to entirely new tasks.
+          Goal-conditioned policies may enable some generalization, but cannot
+          capture all tasks that might be desired. In this paper, we propose
+          goal distributions as a general and broadly applicable task
+          representation suitable for contextual policies. Goal distributions
+          are general in the sense that they can represent any state-based
+          reward function when equipped with an appropriate distribution class,
+          while the particular choice of distribution class allows us to trade
+          off expressivity and learnability. We develop an off-policy algorithm
+          called distribution-conditioned reinforcement learning (DisCo RL) to
+          efficiently learn these policies. We evaluate DisCo RL on a variety of
+          robot manipulation tasks and find that it significantly outperforms
+          prior methods on tasks that require generalization to new goal
+          distributions.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="skewfit.png" alt="Skew-Fit visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/1903.03698.pdf">
+            <papertitle>
+                Skew-Fit: State-Covering Self-Supervised Reinforcement Learning
+            </papertitle>
+            </a>
+            <br>
+            <strong>Vitchyr H. Pong*</strong>,
+            <a href="https://mihdalal.github.io/">Murtaza Dalal*</a>,
+            Steven Lin*,
+            <a href="https://ashvin.me/">Ashvin Nair*</a>,
+            Shikhar Bahl,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine</a>.
+            <em>
+                International Conference on Machine Learning. 2020.
+            </em>
+            [<a href="https://arxiv.org/abs/1903.03698">arXiv</a>]
+            [<a href="https://sites.google.com/view/skew-fit/">videos</a>]
+          </p>
+          <p>
+          For an autonomous agent to fulfill a wide range of user-specified goals
+          at test time, it must be able to learn broadly applicable and
+          general-purpose skill repertoires. Furthermore, to provide the requisite
+          level of generality, these skills must handle raw sensory input such as
+          images. In this paper, we propose an algorithm that acquires such
+          general-purpose skills by combining unsupervised representation learning
+          and reinforcement learning of goal-conditioned policies. Since the
+          particular goals that might be required at test-time are not known in
+          advance, the agent performs a self-supervised "practice" phase where it
+          imagines goals and attempts to achieve them. We learn a visual
+          representation with three distinct purposes: sampling goals for
+          self-supervised practice, providing a structured transformation of raw
+          sensory inputs, and computing a reward signal for goal reaching. We also
+          propose a retroactive goal relabeling scheme to further improve the
+          sample-efficiency of our method. Our off-policy algorithm is efficient
+          enough to learn policies that operate on raw image observations and
+          goals for a real-world robotic system, and substantially outperforms
+          prior techniques.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="cc-rig.gif" alt="CC-RIG visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+            <a href="https://arxiv.org/pdf/1910.11670.pdf">
+            <papertitle>
+                Contextual Imagined Goals for Self-Supervised Robotic Learning
+            </papertitle>
+            </a>
+            <br>
+            <a href="https://ashvin.me/">Ashvin Nair*</a>,
+            <a href="https://www.cs.cmu.edu/~sbahl2/">Shikhar Bahl*</a>,
+            Alexander Khazatsky*,
+            <a href="https://people.eecs.berkeley.edu/~gberseth/">Glen Berseth</a>,
+            <strong>Vitchyr H. Pong</strong>,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine</a>.
+            <em>
+                Conference on Robot Learning. 2019.
+            </em>
+            [<a href="https://arxiv.org/abs/1910.11670">arXiv</a>]
+            [<a href="https://ccrig.github.io/">website</a>]
+          </p>
+          <p>
+          For an autonomous agent to fulfill a wide range of user-specified goals
+          at test time, it must be able to learn broadly applicable and
+          general-purpose skill repertoires. Furthermore, to provide the requisite
+          level of generality, these skills must handle raw sensory input such as
+          images. In this paper, we propose an algorithm that acquires such
+          general-purpose skills by combining unsupervised representation learning
+          and reinforcement learning of goal-conditioned policies. Since the
+          particular goals that might be required at test-time are not known in
+          advance, the agent performs a self-supervised "practice" phase where it
+          imagines goals and attempts to achieve them. We learn a visual
+          representation with three distinct purposes: sampling goals for
+          self-supervised practice, providing a structured transformation of raw
+          sensory inputs, and computing a reward signal for goal reaching. We also
+          propose a retroactive goal relabeling scheme to further improve the
+          sample-efficiency of our method. Our off-policy algorithm is efficient
+          enough to learn policies that operate on raw image observations and
+          goals for a real-world robotic system, and substantially outperforms
+          prior techniques.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="leap.png" alt="LEAP visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/1911.08453.pdf">
+            <papertitle>Planning with Goal-Conditioned Policies</papertitle>
+            </a>
+            <br>
+            <a href="http://snasiriany.me/">Soroush Nasiriany*</a>,
+            <strong>Vitchyr Pong*</strong>,
+            Steven Lin,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine</a>.
+            <em>
+                Neural Information Processing Systems. 2019.
+            </em>
+            [<a href="https://arxiv.org/abs/1911.08453">arXiv</a>]
+            [<a
+                href="https://sites.google.com/view/goal-planning/">videos/website</a>]
+            [<a href="https://github.com/snasiriany/leap">code</a>]
+          </p>
+          <p>
+          Planning methods can solve temporally extended sequential decision
+          making problems by composing simple behaviors. However, planning
+          requires suitable abstractions for the states and transitions, which
+          typically need to be designed by hand. In contrast, model-free
+          reinforcement learning (RL) can acquire behaviors from low-level
+          inputs directly, but often struggles with temporally extended tasks.
+          Can we utilize reinforcement learning to automatically form the
+          abstractions needed for planning, thus obtaining the best of both
+          approaches? We show that goal-conditioned policies learned with RL can
+          be incorporated into planning, so that a planner can focus on which
+          states to reach, rather than how those states are reached. However,
+          with complex state observations such as images, not all inputs
+          represent valid states. We therefore also propose using a latent
+          variable model to compactly represent the set of valid states for the
+          planner, so that the policies provide an abstraction of actions, and
+          the latent variable model provides an abstraction of states. We
+          compare our method with planning-based and model-free methods and find
+          that our method significantly outperforms prior work when evaluated on
+          image-based robot navigation and manipulation tasks that require
+          non-greedy, multi-staged behavior.
+          </p>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><img src="rig.png" alt="RIG visualization" width="160" style="border-style: none"></td>
+          <td width="75%" valign="top">
+          <p>
+          <a href="https://arxiv.org/pdf/1807.04742.pdf">
+            <papertitle>Visual Reinforcement Learning with Imagined Goals</papertitle>
+            </a>
+            <br>
+            <a href="https://ashvin.me/">Ashvin Nair*</a>,
+            <strong>Vitchyr Pong*</strong>,
+            <a href="https://mihdalal.github.io/">Murtaza Dalal</a>,
+            Shikhar Bahl,
+            Steven Lin,
+            <a href="https://people.eecs.berkeley.edu/~svlevine/">
+                Sergey Levine
+            </a>.
+            <em>
+                Neural Information Processing Systems. 2018.
+                <strong>Spotlight.</strong>
+            </em>
+            [<a href="https://arxiv.org/abs/1807.04742">arXiv</a>]
+            [<a href="https://sites.google.com/site/visualrlwithimaginedgoals/">videos</a>]
+            [<a href="https://github.com/vitchyr/rlkit">code</a>]
+            [<a href="https://bair.berkeley.edu/blog/2018/09/06/rig/">blog</a>]
+          </p>
+          <p>
+          For an autonomous agent to fulfill a wide range of user-specified goals
+          at test time, it must be able to learn broadly applicable and
+          general-purpose skill repertoires. Furthermore, to provide the requisite
+          level of generality, these skills must handle raw sensory input such as
+          images. In this paper, we propose an algorithm that acquires such
+          general-purpose skills by combining unsupervised representation learning
+          and reinforcement learning of goal-conditioned policies. Since the
+          particular goals that might be required at test-time are not known in
+          advance, the agent performs a self-supervised "practice" phase where it
+          imagines goals and attempts to achieve them. We learn a visual
+          representation with three distinct purposes: sampling goals for
+          self-supervised practice, providing a structured transformation of raw
+          sensory inputs, and computing a reward signal for goal reaching. We also
+          propose a retroactive goal relabeling scheme to further improve the
+          sample-efficiency of our method. Our off-policy algorithm is efficient
+          enough to learn policies that operate on raw image observations and
+          goals for a real-world robotic system, and substantially outperforms
+          prior techniques.
+          </p>
+          </td>
+        </tr>
+      <tr>
+        <td width="25%"><img src="composable.png" alt="Composable visualization" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+        <a href="https://arxiv.org/pdf/1803.06773.pdf">
+          <papertitle>
+              Composable Deep Reinforcement Learning for Robotic Manipulation
+          </papertitle>
+          </a>
+          <br>
+          <a href="https://people.eecs.berkeley.edu/~haarnoja/">
+              Tuomas Haarnoja
+          </a>,
+          <strong>Vitchyr Pong</strong>,
+          Aurick Zhou,
+          <a href="https://mihdalal.github.io/">Murtaza Dalal</a>,
+          <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter
+              Abbeel</a>,
+          <a href="https://people.eecs.berkeley.edu/~svlevine/">
+              Sergey Levine
+          </a>.
+          <em>
+              International Conference on Robotics and Automation (ICRA), 2018.
+          </em>
+          [<a href="https://arxiv.org/pdf/1803.06773.pdf">arXiv</a>]
+          [<a href="https://sites.google.com/view/composing-real-world-policies">video</a>]
+          [<a href="https://github.com/haarnoja/softqlearning/">code</a>]
+        </p>
+        <p>
+        Model-free deep reinforcement learning has been shown to exhibit good
+        performance in domains ranging from video games to simulated robotic
+        manipulation and locomotion. However, model-free methods are known to
+        perform poorly when the interaction time with the environment is
+        limited, as is the case for most real-world robotic tasks. In this
+        paper, we study how maximum entropy policies trained using soft
+        Q-learning can be applied to real-world robotic manipulation. The
+        application of this method to real-world manipulation is facilitated by
+        two important features of soft Q-learning. First, soft Q-learning can
+        learn multimodal exploration strategies by learning policies represented
+        by expressive energy-based models. Second, we show that policies learned
+        with soft Q-learning can be composed to create new policies, and that
+        the optimality of the resulting policy can be bounded in terms of the
+        divergence between the composed policies.
+        </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="ant-smaller-2.gif" alt="TDM visualization" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+        <a href="https://arxiv.org/pdf/1802.09081.pdf">
+          <papertitle>Temporal Difference Models: Model-Free Deep RL for Model-Based Control</papertitle>
+          </a>
+          <br>
+          <strong>Vitchyr Pong*</strong>,
+          <a href="http://sg717.user.srcf.net/">Shixiang Gu*</a>,
+          <a href="https://mihdalal.github.io/">Murtaza Dalal</a>,
+          <a href="https://people.eecs.berkeley.edu/~svlevine/">
+              Sergey Levine
+          </a>.
+          <em>
+              International Conference on Learning Representations. 2018.
+          </em>
+          [<a href="https://arxiv.org/abs/1802.09081">arXiv</a>]
+          [<a href="https://github.com/vitchyr/rlkit">code</a>]
+          [<a href="https://bair.berkeley.edu/blog/2018/04/26/tdm/">blog</a>]
+        </p>
+        <p>
+        Model-free reinforcement learning (RL) is a powerful, general tool for
+        learning complex behaviors. However, its sample efficiency is often
+        impractical large for solving challenging real-world problems, even with 
+        off-policy algorithms such as Q-learning.
+        We introduce temporal difference models (TDMs), a family of
+        goal-conditioned value functions that can be trained
+        with model-free learning and used for model-based control.
+        TDMs combine the benefits of model-free and model-based RL: they
+        leverage the rich information in state transitions to learn very
+        efficiently, while still attaining asymptotic performance that exceeds
+        that of direct model-based RL methods.
+        </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="bebop_box.jpg" alt="bebpo in front of box" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://arxiv.org/pdf/1702.01182.pdf">
+          <papertitle>Uncertainty-Aware Reinforcement Learning for Collision Avoidance</papertitle>
+          </a>
+          <br>
+          <a href="https://people.eecs.berkeley.edu/~gregoryk/">Gregory Kahn</a>,
+          Adam Villaflor,
+          <strong>Vitchyr Pong</strong>,
+          <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>,
+          <a href="https://people.eecs.berkeley.edu/~svlevine/">
+              Sergey Levine
+          </a>.
+          <em>
+              arXiv:1702.01182
+          </em>
+          [<a href="https://sites.google.com/site/probcoll/">Video</a>]
+          [<a href="https://arxiv.org/abs/1702.01182">arXiv</a>]
+        </p>
+        <p>
+        Practical deployment of reinforcement learning methods must contend with
+        the fact that the training process itself can be unsafe for the robot.
+        In this paper, we consider the specific case of a mobile robot learning
+        to navigate an a priori unknown environment while avoiding collisions.
+        We present an uncertainty-aware model-based learning algorithm that
+        estimates the probability of collision together with a statistical
+        estimate of uncertainty. We evaluate our method on a simulated and
+        real-world quadrotor, and a real-world RC car.
+        </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="deep-memory-states.png"
+            alt="Using Deep Memory States for Reinforcement Learning" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="learning_long_term_dependencies_with_deep_memory_states__pong_gu_levine.pdf" />
+          <papertitle>
+              Learning Long-term Dependencies with Deep Memory States
+          </papertitle>
+          </a>
+          <br>
+          <strong>Vitchyr Pong</strong>,
+          <a href="http://sg717.user.srcf.net/">Shixiang Gu</a>,
+          <a href="https://people.eecs.berkeley.edu/~svlevine/">
+              Sergey Levine
+          </a>.
+          <em>
+              Lifelong Learning: A Reinforcement Learning Approach Workshop,
+              International Conference on Machine Learning.
+          </em>
+          2017.
+        </p>
+        <p>
+        Training an agent to use past memories to adapt to new tasks and
+        environments is important for lifelong learning algorithms.
+        We propose a reinforcement learning method that addresses the
+        limitations of methods like BPTT and truncated BPTT by training
+        a critic to estimate truncated gradients and by saving and loading
+        hidden states outputted by recurrent neural networks.
+        We present results showing that our algorithm can learn long-term
+        dependencies while avoiding the computational constraints of BPTT.
+        <br></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="drc.png"
+            alt="DARPA Robotics Challenge picture" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="http://ieeexplore.ieee.org/document/7487613/?reload=true">
+          <papertitle>Reactive high-level behavior synthesis for an Atlas
+          humanoid robot</papertitle>
+          </a>
+          <br>
+          <a href="http://www.smaniato.me/">Spyros Maniatopoulos</a>,
+          <a href="https://www.linkedin.com/in/pschillinger">Philipp Schillinger</a>,
+          <strong>Vitchyr Pong</strong>,
+          <a href="http://cnu.edu/pcs/faculty_staff/conner.asp">David D. Connor</a>,
+          <a href="http://verifiablerobotics.com/">Hadas Kress-Gazit</a>.
+          <em>IEEE International Conference on Robotics and Automation</em>,
+          2016.
+        </p>
+        <p>
+        We present and end-to-end approach for the automatic generation of code
+        that implements high-level robot behaviors in a verifiably correct
+        manner. We start with Linear Temporal Logic (LTL) equations and use them
+        to synthesize a reactive mission plana that is gauranteed to satisfy the
+        formal specifications.
+        <br></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="evolving_social_network_models.png"
+            alt="social network example" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="two_evolving_social_network_models.pdf">
+          <papertitle>Two evolving social network models</papertitle>
+          </a>
+          <br>
+          <a href="http://www4.ncsu.edu/~srmagura/index.html">Sam Magura</a>,
+          <strong>Vitchyr Pong</strong>,
+          <a href="https://services.math.duke.edu/~rtd/">Rick Durrett</a>,
+          <a href="http://www.stat.osu.edu/~dsivakoff/index/Home.html">
+              David Sivakoff
+          </a>.
+          <em>ALEA, Lat. Am. J. Probab. Math. Stat.</em>, 2015.
+        </p>
+        <p>We study two different social network models. We prove that their
+        stationary distributions satisfy the detailed balance condition and give
+        explicit formulas for the stationary distributions. From this
+        distribution, we also obtain results about the degree distribution,
+        connectivity, and diameter for each model.<br></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="chomp2.png" alt="chomp_the_graph" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="chomp_the_graph.pdf">
+          <papertitle>Chomp the Graph</papertitle>
+          </a>
+          <br>
+          <a href="http://www4.ncsu.edu/~srmagura/index.html">Sam Magura</a>,
+          <strong>Vitchyr Pong</strong>,
+          <a href="http://astro.physics.ncsu.edu/~evcartee/">Elliot Cartee</a>,
+          <a href="https://www.linkedin.com/in/kevin-valakuzhy-319a5447">
+              Kevin Valakuzhy
+          </a>.
+          <em>Broad Street Scientific</em>, 2012<br>
+        </p>
+        <p>Chomp the Graph is a terminating impartial game that adheres to
+        normal play convetion. By the Sprague-Grundy Theorem, Chomp has a
+        number, which determines if a position leads to a win if played
+        optimally. We prove the nimber of certain types of graphs.<br></p>
+        </td>
+      </tr>
+      <!-- Template
+      <tr>
+        <td width="25%"><img src="IMAGE_TODO.jpg" alt="b3do" width="160" style="border-style: none"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="LINK_TODO.pdf">
+          <papertitle>TITLE_TODO</papertitle>
+          </a>
+          <br>
+          <a href="LINK_TODO">AUTHOR1_TODO</a>,
+          <a href="LINK_TODO">AUTHOR2_TODO</a>
+          <em>CONFERENCE_TODO</em>, DATE_TODO<br>
+          <a href="BIBTEX_TODO">bibtex</a> / <a href="inpaintZ.zip">CODE_TODO</a>
+        </p>
+        <p>SHORT_DESCRIPTION_TODO.<br></p>
+        </td>
+      </tr>
+      -->
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <heading>Course Projects</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="keyboard_gloves.png" alt="keyboard gloves" width="160" height="160"></td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="http://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2015/gzm3_vhp22/gzm3_vhp22/gzm3_vhp22/index.html">
+          <papertitle>Keyboard Gloves</papertitle>
+          </a>
+          <br>
+          <strong>Vitchyr Pong</strong>, Gulnar Mirza, 2015
+          <br />
+          <a href="https://www.youtube.com/watch?v=vo_WbQcBjXI">Demo</a> / <a href="https://www.youtube.com/watch?v=Te1svkw9mus">Video
+              Explanation</a>
+        <p>
+          Designed and created gloves that allow users to type on any hard
+          surface as if they were using a QWERTY keyboard. The gloves recognize
+          the standard QWERTY keyboard layout by recognizing which finger is
+          pressed via push buttons, and how bent the finger is via flex sensors.
+          We combined knowledge of analog circuit design, serial communication
+          protocols, and embedded programming to implement this project.
+        </p>
+        </p>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <heading>Teaching</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="cs188-ai.png" alt="perceptron" width="160"></td>
+        <td width="75%" valign="center">
+        <p>
+          <a href="https://edge.edx.org/courses/course-v1:Berkeley+CS188+SP17/info" />
+          <papertitle>
+              CS188: Artificial Intelligence
+          </papertitle>
+          </a>
+          <br />
+          Graduate Student Instructor.
+          <br />
+          <em>
+              University of California, Berkeley. Spring 2017.
+          </em>
+        </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="25%"><img src="cs4780.png" alt="perceptron" width="160" height="160"></td>
+        <td width="75%" valign="center">
+        <p>
+          <a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/">
+              <papertitle>
+                  CS4780 / CS5780: Machine Learning
+              </papertitle>
+          </a>
+          <br />
+          Teaching Assistant.
+          <br />
+          <em>
+              Cornell University. Fall 2015.
+          </em>
+        </p>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <br>
+        <p align="right"><font size="2">
+          <a href="https://people.eecs.berkeley.edu/~barron/">I like this website.</a>
+          </font>
+        </p>
+        </td>
+      </tr>
+      </table>
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          
+      </script> <script type="text/javascript">
+      try {
+          var pageTracker = _gat._getTracker("UA-7580334-1");
+          pageTracker._trackPageview();
+          } catch(err) {}
+      </script>
+    </td>
+    </tr>
+  </table>
+  </body>
+</html>
+
